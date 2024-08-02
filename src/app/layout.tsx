@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
+import { ThemeProvider } from "@/components/ThemeProvoider";
+import Sidebar from "@/components/Sidebar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,21 +20,20 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.className} `}>
-        <main className="grid grid-cols-4  h-screen overflow-hidden">
-        <div className="h-full col-span-3 overflow-y-auto">
-          {children}
-          </div>
-          <Sidebar/>
-        </main>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <main
+            className={`grid lg:grid-cols-4 md:grid-cols-3 h-screen overflow-hidden`}
+          >
+            <div className={`h-full col-span-3 overflow-y-auto`}>
+              <Header />
+              {children}
+            </div>
+            <div className="col-span-1 hidden lg:block">
+              <Sidebar />
+            </div>
+          </main>
+        </ThemeProvider>
       </body>
     </html>
   );
 }
-
-function Sidebar(){
-  return (
-    <div className="h-full  bg-green-600 col-span-1 items-center justify-center flex">
-        <h2 className="text-white text-2xl "> Hello world </h2>
-      </div>
-  )
-} 

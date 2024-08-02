@@ -1,50 +1,43 @@
+import Header from "@/components/Header";
+import ImageGlider from "@/components/ImageGlider";
+import { BackgroundGradientAnimation } from "@/components/ui/background-gradient";
 import Image from "next/image";
 
 export default function Home() {
   return (
-    <main className=" ">
-      <p className="text-2xl font-bold ">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos ipsa
-        obcaecati velit autem corrupti repellendus perferendis illum mollitia
-        accusantium, voluptas dolor minima optio quidem vel modi nobis
-        recusandae, sit quae! Iste beatae delectus pariatur alias adipisci,
-        nihil cum tenetur tempora sequi eligendi sint cumque a animi, suscipit
-        perferendis cupiditate! Similique asperiores aut quidem accusantium
-        nihil quod nemo modi commodi obcaecati! Tenetur ratione beatae
-        reprehenderit a similique libero rem iure numquam. Doloribus accusamus
-        dolorum, cum adipisci at aut quasi officiis possimus enim ex eius
-        impedit dolores amet eligendi minima rerum consequatur. Expedita cum
-        alias asperiores nulla. Facere, voluptatibus repellat cumque blanditiis,
-        exercitationem distinctio quas porro quo facilis culpa fugit, et omnis
-        velit odio eius beatae provident tempora delectus optio? Inventore,
-        quos. Atque in asperiores dicta maiores natus at corrupti quae sit
-        eligendi laborum, provident qui nobis iusto hic optio? Earum natus
-        suscipit, laboriosam hic eveniet sit repellendus velit iusto perferendis
-        iste. Consequatur, qui, sapiente ea praesentium saepe impedit
-        exercitationem nulla harum accusantium perspiciatis rem sint, aliquid
-        recusandae dolores laudantium! Odit magnam soluta corrupti similique
-        deleniti excepturi ipsam quibusdam enim, quaerat exercitationem! Lorem
-        ipsum dolor sit amet consectetur adipisicing elit. Repellendus nemo
-        temporibus eaque placeat enim autem quos nesciunt optio expedita natus,
-        rem vitae tempore, ratione aliquam hic omnis accusamus laboriosam
-        repudiandae. Debitis nam dolor possimus doloribus expedita perferendis.
-        Hic mollitia neque beatae totam, odio cupiditate alias accusantium
-        magnam commodi? Tenetur quam harum, doloribus ipsum esse fuga dolore hic
-        officiis voluptates nam! Quo libero nulla quos ipsum eius sed tenetur ut
-        placeat corporis quod beatae, minus voluptates aspernatur ea! Esse
-        labore doloremque dolores. Natus neque aperiam rem placeat quasi numquam
-        labore! Porro. Voluptates, rem accusantium? Dolorum itaque magnam
-        assumenda! Recusandae nobis dignissimos placeat debitis harum qui?
-        Facere eveniet illum vitae, optio nihil tenetur ut nostrum totam
-        dignissimos mollitia corporis accusamus voluptatibus exercitationem.
-        Explicabo quasi nulla quo. Dolore labore hic iure quisquam, quidem
-        recusandae ea quaerat! Perferendis, laboriosam consequatur aperiam
-        labore autem iure facilis, ratione ad ut, veniam voluptates tempore illo
-        eligendi laborum. Doloremque, obcaecati cum. Beatae facilis eos porro
-        explicabo soluta iste architecto libero veritatis. Nulla aliquam fugit
-        esse et itaque rerum doloribus vel, ullam dolores omnis rem atque
-        cupiditate quidem voluptates.
-      </p>
-    </main>
+    <section className="px-8 mt-5 py-5">
+      <div className="flex flex-col items-center justify-center  w-full h-full py-7 px-9 ">
+        <div className="flex w-full ">
+          <h2 className="text-3xl font-bold ">Statics</h2>
+        </div>
+
+        <div className="grid lg:grid-cols-5 md:grid-cols-3  gap-5 w-full mt-14 h-5  ">
+          <div
+            style={{
+              background:
+                "linear-gradient(38deg, rgba(2,0,36,1) 0%, rgba(126,48,127,1) 35%, rgba(1,54,32,1) 91%)",
+            }}
+            className=" col-span-1 flex justify-center items-center shadow-md aspect-square  rounded-md  "
+          >
+            <h1 className="text-2xl  text-white font-bold">NGhastly</h1>
+          </div>
+          <BackgroundGradientAnimation
+            containerClassName="w-full md:col-span-2 lg:col-span-3 h-full   rounded-lg"
+            className="h-full"
+            size="95%"
+          >
+            <div className="w-full  flex justify-center items-center  h-full">
+              <h2 className="text-3xl text-white font-bold ">
+                Hi , I am Nihal
+              </h2>
+            </div>
+          </BackgroundGradientAnimation>
+          <div className="flex items-center justify-center aspect-square ">
+            <h2></h2>
+          </div>
+          <ImageGlider />
+        </div>
+      </div>
+    </section>
   );
 }

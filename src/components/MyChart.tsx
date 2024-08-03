@@ -1,7 +1,7 @@
 'use client'
-import { Bar, BarChart } from "recharts"
+import { Area, AreaChart, Bar, BarChart, XAxis } from "recharts"
 
-import { ChartConfig, ChartContainer, ChartTooltipContent } from "@/components/ui/chart"
+import { ChartConfig, ChartContainer, ChartLegend, ChartLegendContent, ChartTooltipContent } from "@/components/ui/chart"
 import { ChartTooltip } from "./ui/chart"
 
 export function MyChart() {
@@ -17,22 +17,37 @@ export function MyChart() {
 
     const chartConfig = {
         desktop: {
-          label: "Desktop",
+          label: "Sales",
           color: "#2563eb",
+          
         },
         mobile: {
-          label: "Mobile",
+          label: "No Sales",
           color: "#60a5fa",
         },
       } satisfies ChartConfig
   return (
     <ChartContainer className="min-h-[200px] w-full" config={chartConfig}>
-      <BarChart data={chartData} accessibilityLayer >
-      <ChartTooltip content={<ChartTooltipContent />} />
-      <Bar dataKey="desktop" fill="var(--color-desktop)" radius={4} />
-      <Bar dataKey="mobile" fill="var(--color-mobile)" radius={4} />
-        
-      </BarChart>
+    <AreaChart accessibilityLayer
+    data={chartData}
+    margin={{
+      left:12,
+      right:12
+    }}>
+
+      <XAxis
+      dataKey='month'
+      tickLine={false}
+      axisLine={false}
+      tickMargin={8}
+      tickFormatter={(value)=> value.slice(0,3)} />
+
+      <Area dataKey='desktop'
+      type='linear'
+      fill="var(--color-desktop)"
+      fillOpacity={0.0}
+      stroke="var(--color-desktop)"/>
+    </AreaChart>
     </ChartContainer>
   )
 }
